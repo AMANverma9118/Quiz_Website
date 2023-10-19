@@ -1,0 +1,77 @@
+*{
+    box-sizing: border-box;
+    padding: 0rem;
+    margin: 0rem;
+}
+.name{
+    font-size: 8rem;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url('/Quiz_Website/simple-blue-background-free-vector.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    /* background-position: center; */
+    color: white;
+    font-weight: bolder;
+    /*  */
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    
+    width: 100vw;
+}
+.btn a{
+    text-decoration: none;
+}
+button{
+    display: flex;
+    flex-wrap: wrap;
+    height: 5vh;
+    width: 8vw;
+    padding: 2px 3px;
+    margin: 2rem 1rem;
+    border-radius: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolds;
+    font-size: 1rem;
+    color: white;
+    background-color: skyblue;
+    cursor: pointer;
+    border: 2px solid wheat;
+}
+button:hover{
+    background-color: rgb(8, 69, 100);
+    transform: translateY(5px);
+    box-shadow: 0px 2px 3px 6px skyblue;
+
+}
+@media (max-width:800px) and (min-width:300px){
+    .name{
+        font-size: 4rem;
+    }
+    button{
+        width: 30vw;
+        height: 6vh;
+    }
+}
+
+@media (max-width:295px){
+    .name{
+        font-size: 4rem;
+    }
+    .container{
+        height: 114.3vh;
+        width: 114.3vw;
+    }
+    button{
+        width: 30vw;
+        height: 6vh;
+    }
+}

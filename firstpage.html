@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz_Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0rem;
+
+        }
+
+        body {
+            background-image: linear-gradient(skyblue, rgb(42, 147, 182), rgb(27, 172, 148));
+            height: 100vh;
+        }
+
+        .information {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .text{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .text input {
+            margin: 1rem 2rem;
+            padding: 1rem 1rem;
+            height: 2rem;
+            border-radius: 2rem;
+            background-color: rgb(161, 240, 240);
+            border: 2px solid aqua;
+        }
+
+        .regi {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            font-weight: bolder;
+            font-size: 3rem;
+            width: 100vw;
+        }
+
+        .btn {
+            margin: 2rem;
+            height: 5vh;
+            width: 6vw;
+            border-radius: 2rem;
+            margin: 2rem 1rem;
+            cursor: pointer;
+            background-color: aqua;
+            border: 2px solid aqua;
+            color: black;
+            font-size: 1rem;
+        }
+        .btn:hover{
+            background-color: black;
+            color: aqua;
+        }
+
+        @media (max-width:800px) and (min-width:300px){
+            .regi{
+                font-size: 2rem;
+            }
+            .btn{
+                width: 5rem;
+            }
+        }
+
+        @media (max-width:295px){
+    .regi{
+        font-size: 1.5rem;
+    }
+    .btn{
+                width: 5rem;
+        }
+}
+    </style>
+</head>
+
+<body>
+    
+    <div class="information">
+        <div class="regi">
+            Register yourself here!
+        </div>
+        <div class="text">
+            <input type="text" name="text" id="Firestname" placeholder="FIRST NAME">
+            <input type="text" name="text" id="Lastname" placeholder="LAST NAME">
+        </div>
+
+        <div class="text">
+            <input type="number" name="number" id="number" placeholder="PHONE NUMBER">
+        </div>
+        <div class="text">
+            <input type="email" name="email" id="email" placeholder="EMAIL">
+        </div>
+        <div class="text">
+            <input type="text" name="text" id="State" placeholder="YOUR STATE">
+        </div>
+        <div class="text">
+            <button type="submit" class="btn" onclick="text()">SUBMIT</button>
+            <button type="reset" value="reset now" class="btn" onclick="text">RESET</button>
+        </div>
+
+    </div>
+
+    <!-- <div class="instruction">
+        <h2>Quiz Guide</h2>
+        <span class="info">1. Lorem ipsum dolor sit amet.</span>
+        <span class="info">2. Lorem ipsum dolor sit amet consectetur.</span>
+        <span class="info">3. Lorem, ipsum.</span>
+        <span class="info">4. Lorem ipsum dolor sit amet consectetur.</span>
+        <span class="info">5. Lorem ipsum, dolor sit amet consectetur adipisicing.</span>
+
+        <div class="btn-group">
+            <button class="info-btn exit-btn">Exit Quiz</button>
+            <a href="#" class="info-btn continue-btn">Continue</a>
+        </div>
+    </div> -->
+
+
+</body>
+<script src="/Quiz_Website/script.js"></script>
+</html>
