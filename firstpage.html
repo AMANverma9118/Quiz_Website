@@ -9,12 +9,14 @@
         * {
             box-sizing: border-box;
             margin: 0rem;
+            padding: 0rem;
 
         }
 
         body {
             background-image: linear-gradient(skyblue, rgb(42, 147, 182), rgb(27, 172, 148));
             height: 100vh;
+            width: 100vw;
         }
 
         .information {
@@ -23,13 +25,16 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+
         }
-        .text{
+
+        .text {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
         }
+
         .text input {
             margin: 1rem 2rem;
             padding: 1rem 1rem;
@@ -50,7 +55,7 @@
             width: 100vw;
         }
 
-        .btn {
+        .btn1 {
             margin: 2rem;
             height: 5vh;
             width: 6vw;
@@ -62,33 +67,130 @@
             color: black;
             font-size: 1rem;
         }
-        .btn:hover{
+
+        .btn1:hover {
             background-color: black;
             color: aqua;
         }
 
-        @media (max-width:800px) and (min-width:300px){
-            .regi{
+        @media (max-width:800px) and (min-width:300px) {
+            .regi {
                 font-size: 2rem;
             }
-            .btn{
+
+            .information {
+                height: 90vh;
+            }
+
+            .btn1 {
                 width: 5rem;
             }
         }
 
-        @media (max-width:295px){
-    .regi{
-        font-size: 1.5rem;
-    }
-    .btn{
+        @media (max-width:295px) {
+            .regi {
+                font-size: 1.5rem;
+            }
+
+            .btn1 {
                 width: 5rem;
+            }
         }
-}
+
+        .instruction {
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            background-image: url('/Quiz_Website/simple-blue-background-free-vector.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+            color: white;
+            background-color: antiquewhite;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s ease;
+
+        }
+
+        @media (max-width:800px) and (min-width:300px) {
+            .instruction {
+                height: 150vh;
+                width: 133vw;
+            }
+
+            .information{
+                height: 100vh;
+            }
+
+
+        }
+
+        @media (max-width:295px) {
+            .instruction {
+                height: 133vh;
+                width: 133vw;
+            }
+        }
+
+        .instruction.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .btn-group {
+            margin: 2rem;
+        }
+
+        .info-btn_exit-btn {
+            margin: 0rem 7rem;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            background-color: skyblue;
+            border-radius: 0.5rem;
+            color: white;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+
+        .info-btn_continue-btn {
+            margin: 8rem 7rem;
+            padding: 0.5rem 1rem;
+            font-size: 2rem;
+            text-decoration: none;
+            color: white;
+            background-color: skyblue;
+            border-radius: 0.5rem;
+            border: 2px solid white;
+            cursor: pointer;
+
+        }
+
+        .info-btn_continue-btn:hover {
+            background-color: rgb(8, 69, 100);
+            transform: translateY(5px);
+            box-shadow: 0px 2px 3px 6px skyblue;
+
+        }
+
+        .info-btn_exit-btn:hover {
+            background-color: rgb(8, 69, 100);
+            transform: translateY(5px);
+            box-shadow: 0px 2px 3px 6px skyblue;
+
+        }
     </style>
 </head>
 
 <body>
-    
+
     <div class="information">
         <div class="regi">
             Register yourself here!
@@ -108,13 +210,13 @@
             <input type="text" name="text" id="State" placeholder="YOUR STATE">
         </div>
         <div class="text">
-            <button type="submit" class="btn" onclick="text()">SUBMIT</button>
-            <button type="reset" value="reset now" class="btn" onclick="text">RESET</button>
+            <button type="submit" class="btn1" onclick="text()">SUBMIT</button>
+            <button type="reset" value="reset now" class="btn1" onclick="text">RESET</button>
         </div>
 
     </div>
 
-    <!-- <div class="instruction">
+    <div class="instruction">
         <h2>Quiz Guide</h2>
         <span class="info">1. Lorem ipsum dolor sit amet.</span>
         <span class="info">2. Lorem ipsum dolor sit amet consectetur.</span>
@@ -123,12 +225,13 @@
         <span class="info">5. Lorem ipsum, dolor sit amet consectetur adipisicing.</span>
 
         <div class="btn-group">
-            <button class="info-btn exit-btn">Exit Quiz</button>
-            <a href="#" class="info-btn continue-btn">Continue</a>
+            <button onclick="exit()" class="info-btn_exit-btn">Exit Quiz</button>
+            <a href="#" class="info-btn_continue-btn">Continue</a>
         </div>
-    </div> -->
-
+    </div>
+    <script src="/Quiz_Website/script.js"></script>
 
 </body>
-<script src="/Quiz_Website/script.js"></script>
+
+
 </html>
