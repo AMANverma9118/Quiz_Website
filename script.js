@@ -1,6 +1,10 @@
+function MyFunction() {
+    window.location.href = "firstpage.html";
+}
+
 function text() {
     //Taking data
-    var first_name = document.getElementById("Firestname").value;
+    var first_name = document.getElementById("Firstname").value;
     var last_name = document.getElementById("Lastname").value;
     var number = document.getElementById("number").value;
     var email = document.getElementById("email").value;
@@ -31,9 +35,11 @@ function text() {
     if (count > 0) {
         text();
     }
-
-
-
+    if (a.length != 0 && b.length != 0 && c != 0 && d != 0){
+        alert("Your information successfully submited");
+    }
+    
+    
     const submit = document.querySelector('.btn1');
     const instruction = document.querySelector('.instruction');
     instruction.classList.add('active');
@@ -45,6 +51,14 @@ function exit() {
     const exit = document.querySelector('.info-btn_exit-btn');
     window.location.href = "index.html"
 
+}
+
+function cont() {
+    window.location.href = "Quiz_question.html";
+}
+
+function exit(){
+    window.location.href = "index.html";
 }
 
 
@@ -60,6 +74,7 @@ const quizdata = [
             "Hyper Text Machine Language",
         ],
         correct: 1,
+        timeLimit: 10,
     },
 
     {
@@ -71,6 +86,8 @@ const quizdata = [
             "Sergey Brin",
         ],
         correct: 2,
+        timeLimit: 10,
+        timeLimit: 10,
     },
 
     {
@@ -82,6 +99,7 @@ const quizdata = [
             "Cascade Sheet Style",
         ],
         correct: 0,
+        timeLimit: 10,
     },
 
     {
@@ -93,6 +111,7 @@ const quizdata = [
             "<style>",
         ],
         correct: 3,
+        timeLimit: 10,
     },
 
     {
@@ -104,6 +123,7 @@ const quizdata = [
             "Goblin",
         ],
         correct: 3,
+        timeLimit: 10,
     },
 
     {
@@ -115,8 +135,12 @@ const quizdata = [
             "Expelliarmus",
         ],
         correct: 1,
+        timeLimit: 10,
     },
 ];
+
+
+
 
 //Intialise 
 
@@ -129,7 +153,7 @@ const skip = document.querySelector("#skip");
 
 let currentQuiz = 0;
 let score = 0;
-
+const timer = document.querySelector("timer1");
 
 //Load quiz question
 
@@ -139,9 +163,71 @@ const loadQuiz = () => {
 
     options.forEach((curOption, index) => (window[`option_${index + 1}`].innerText = curOption)
     );
+//   displayQuestion();  
 };
 
 loadQuiz();
+
+let currentQuestionIndex = 0; // Index of the current question
+let timerInterval;
+
+if(currentQuiz+1 < quizdata.length){
+    function displayQuestion(index) {
+        const questionElement = document.getElementById('question');
+        const optionElements = document.querySelectorAll('.option');
+        const countdownElement = document.getElementById('countdown');
+        
+        // Display the question and options
+        // questionElement.textContent = quizdata[index].question;
+        // for (let i = 0; i < optionElements.length; i++) {
+        //     optionElements[i].textContent = quizdata[index].options[i];
+        // }
+        
+        // // Reset the radio buttons
+        // const answerInputs = document.querySelectorAll('.answer');
+        // for (let i = 0; i < answerInputs.length; i++) {
+        //     answerInputs[i].checked = false;
+        // }
+        
+        // Set the initial time limit
+        let timeRemaining = quizdata[index].timeLimit;
+        countdownElement.textContent = timeRemaining + ' seconds';
+        
+        // Start the timer
+        clearInterval(timerInterval); // Clear any previous timer
+        timerInterval = setInterval(function () {
+            timeRemaining--;
+            countdownElement.textContent = timeRemaining + ' seconds';
+            
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                // Time's up! You can perform some action here.
+                // For example, move to the next question.
+                if (currentQuiz < quizdata.length - 1) {
+                    currentQuiz++;
+                    loadQuiz();
+                }
+                else{
+                    quiz.innerHTML = `
+        <div class="result">
+        <h2>🎉 Your score: ${score}/${quizdata.length*5} correct Answers </h2>
+        <p>Congratulations on completing the quiz! ${localStorage.getItem('Name')} 🏆 </p>
+        <button class="reload-button" onclick="location.reload()">Play again 🔁</button>
+        <button class="reload-button" onclick="exit();">Exit game</button>
+        </div>`
+        ;
+                }
+                displayQuestion(currentQuiz);
+                
+            }
+        }, 1000);
+    }
+    
+    // Initialize the first question and timer
+    displayQuestion(currentQuiz);
+    
+    
+}
 
 
 //taking user answer
@@ -168,6 +254,7 @@ submit.addEventListener("click", () => {
     {
         deselectedAnswer();
         loadQuiz();
+        
     }
 
     if(selectedOptionIndex == quizdata[currentQuiz].correct){
@@ -176,8 +263,12 @@ submit.addEventListener("click", () => {
     else if(selectedOptionIndex != quizdata[currentQuiz].correct){
         score = score-1;
     }
-
+       
         currentQuiz++;
+        if(currentQuiz < quizdata.length){
+            displayQuestion(currentQuestionIndex);
+        }
+        
 
     if (currentQuiz < quizdata.length) {
         deselectedAnswer();
@@ -187,8 +278,9 @@ submit.addEventListener("click", () => {
         quiz.innerHTML = `
         <div class="result">
         <h2>🎉 Your score: ${score}/${quizdata.length*5} correct Answers </h2>
-        <p>Congratulations on completing the quiz! ${localStorage.getItem('name')} 🏆 </p>
+        <p>Congratulations on completing the quiz! ${localStorage.getItem('Name')} 🏆 </p>
         <button class="reload-button" onclick="location.reload()">Play again 🔁</button>
+        <button class="reload-button" onclick="exit();">Exit game</button>
         </div>`
         ;
     }
@@ -196,7 +288,10 @@ submit.addEventListener("click", () => {
 });
 
 skip.addEventListener("click", () => {
-
+    if(currentQuiz < quizdata.length){
+        displayQuestion(currentQuestionIndex);
+    }
+    
     currentQuiz++;
     if(currentQuiz<quizdata.length){
         deselectedAnswer();
@@ -206,8 +301,9 @@ skip.addEventListener("click", () => {
         quiz.innerHTML = `
         <div class="result">
         <h2>🎉 Your score: ${score}/${quizdata.length*5} correct Answers </h2>
-        <p>Congratulations on completing the quiz! ${localStorage.getItem('name')} 🏆 </p>
+        <p>Congratulations on completing the quiz! ${localStorage.getItem('Name')} 🏆 </p>
         <button class="reload-button" onclick="location.reload()">Play again 🔁</button>
+        <button class="reload-button" onclick="exit();">Exit game</button>
         </div>`
         ;
     }
