@@ -3,6 +3,10 @@
     padding: 0rem;
     margin: 0rem;
 }
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .name{
     font-size: 8rem;
 }
@@ -34,7 +38,7 @@ button{
     flex-wrap: wrap;
     height: 5vh;
     width: 8vw;
-    padding: 2px 3px;
+    padding: 3px 3px;
     margin: 2rem 1rem;
     border-radius: 0.5rem;
     align-items: center;
@@ -99,7 +103,7 @@ button:hover{
     
 }
 h2{
-   font-size: 3rem;
+   font-size: 2rem;
 }
 .btn2{
     display: flex;
