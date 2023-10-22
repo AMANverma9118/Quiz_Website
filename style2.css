@@ -95,7 +95,7 @@ body {
     position: absolute;
     top: 0%;
     left: 0%;
-    background-image: url('simple-blue-background-free-vector.jpg');
+    background-image: url('/simple-blue-background-free-vector.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -110,6 +110,10 @@ body {
     pointer-events: none;
     transition: .3s ease;
 
+}
+.infoo{
+    display: flex;
+    flex-direction: column;
 }
 
 @media (max-width:800px) and (min-width:300px) {
@@ -142,9 +146,9 @@ body {
 }
 
 .info-btn_exit-btn {
-    margin: 0rem 7rem;
-    padding: 1rem 2.5rem;
-    font-size: 1rem;
+    margin: 0rem 5rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
     background-color: skyblue;
     border-radius: 0.5rem;
     color: white;
@@ -155,7 +159,7 @@ body {
 .info-btn_continue-btn {
     margin: 8rem 7rem;
     padding: 0.5rem 1rem;
-    font-size: 2rem;
+    font-size: 1.7rem;
     text-decoration: none;
     color: white;
     background-color: skyblue;

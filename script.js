@@ -1,7 +1,7 @@
 function MyFunction() {
     window.location.href = "firstpage.html";
 }
-
+const space=" ";
 function text() {
     //Taking data
     var first_name = document.getElementById("Firstname").value;
@@ -12,12 +12,12 @@ function text() {
     const count = 0;
     //Storing in localstorage
 
-    var name = localStorage.setItem("Name", first_name + last_name);
+    var name = localStorage.setItem("Name", first_name+ space + last_name);
     var phone_number = localStorage.setItem("Phone_number", number);
     var email_user = localStorage.setItem("Email", email);
     var state_user = localStorage.setItem("State", state);
 
-    var name = localStorage.setItem("Name", first_name + last_name);
+    var name = localStorage.setItem("Name", first_name +space+ last_name);
     var phone_number = localStorage.setItem("Phone_number", number);
     var email_user = localStorage.setItem("Email", email);
     var state_user = localStorage.setItem("State", state);
@@ -66,55 +66,6 @@ function exit(){
 
 const quizdata = [
     {
-        question: "What does HTML stand for?",
-        options: [
-            "Hyperlink and Text Markup Language",
-            "Hyper Text Markup Language",
-            "Hyper Text Marking Language",
-            "Hyper Text Machine Language",
-        ],
-        correct: 1,
-        timeLimit: 10,
-    },
-
-    {
-        question: "Who is the father of HTML?",
-        options: [
-            "Rasmus Lerdorf",
-            "Brendan Eich",
-            "Tim Berners-Lee",
-            "Sergey Brin",
-        ],
-        correct: 2,
-        timeLimit: 10,
-        timeLimit: 10,
-    },
-
-    {
-        question: "Which of the below is the abbreviation of CSS ?",
-        options: [
-            "Cascading Style Sheets",
-            "Color and Style Sheets",
-            "Coded Style Sheet",
-            "Cascade Sheet Style",
-        ],
-        correct: 0,
-        timeLimit: 10,
-    },
-
-    {
-        question: "Which of the following tag is used to embed css in html page?",
-        options: [
-            "<css>",
-            " <!DOCTYPE html>",
-            "<script>",
-            "<style>",
-        ],
-        correct: 3,
-        timeLimit: 10,
-    },
-
-    {
         question: "Which magical creature is known for guarding banks?",
         options: [
             "Phoenix",
@@ -137,6 +88,96 @@ const quizdata = [
         correct: 1,
         timeLimit: 10,
     },
+
+    {
+        question: "Harry potter's wand was made of?",
+        options: [
+            "unicorn hair",
+            "dragon heartstring",
+            "veela hair",
+            "phoenix feather",
+        ],
+        correct: 3,
+        timeLimit: 10,
+    },
+    {
+        question: "which dragon did rhaenyra ride in hotd?",
+        options: [
+            "syrax",
+            "caraxes",
+            "vhagar",
+            "Balerion",
+        ],
+        correct: 0,
+        timeLimit: 10,
+    },
+    {
+        question: "In famous movie matrix which pill does Neo take?",
+        options: [
+            "red",
+            "blue",
+            "green",
+            "yellow",
+        ],
+        correct: 0,
+        timeLimit: 10,
+    },
+    {
+        question: "Chaos is the ladder.Which series has this dialogue?",
+        options: [
+            "harry potter",
+            "House of the dragon",
+            "Game of thrones",
+            "Breaking bad",
+        ],
+        correct: 2,
+        timeLimit: 10,
+    },
+    {
+        question: "Which is the final villain of naruto shippuden?",
+        options: [
+            "Kaguya Ostusuki",
+            "Madara",
+            "Obito",
+            "Kabuto",
+        ],
+        correct: 0,
+        timeLimit: 10,
+    },
+    {
+        question: "what is the full form of L's name in famous series Death note?",
+        options: [
+            "Lawliet",
+            "Larkin",
+            "Leolonch",
+            "Leo",
+        ],
+        correct: 2,
+        timeLimit: 10,
+    },
+    {
+        question: "Which stone did Thanos aquired first during his conquest?",
+        options: [
+            "Space staone",
+            "Power stone",
+            "Mind stone",
+            "Reality stone",
+        ],
+        correct: 1,
+        timeLimit: 10,
+    },
+    {
+        question: "What is name of Naruto's father?",
+        options: [
+            "Kakashi hatake",
+            "Minato Namikaze",
+            "Orochimaru",
+            "Jiraya",
+        ],
+        correct: 1,
+        timeLimit: 10,
+    },
+
 ];
 
 
@@ -177,27 +218,16 @@ if(currentQuiz+1 < quizdata.length){
         const optionElements = document.querySelectorAll('.option');
         const countdownElement = document.getElementById('countdown');
         
-        // Display the question and options
-        // questionElement.textContent = quizdata[index].question;
-        // for (let i = 0; i < optionElements.length; i++) {
-        //     optionElements[i].textContent = quizdata[index].options[i];
-        // }
-        
-        // // Reset the radio buttons
-        // const answerInputs = document.querySelectorAll('.answer');
-        // for (let i = 0; i < answerInputs.length; i++) {
-        //     answerInputs[i].checked = false;
-        // }
         
         // Set the initial time limit
         let timeRemaining = quizdata[index].timeLimit;
-        countdownElement.textContent = timeRemaining + ' seconds';
+        countdownElement.textContent = timeRemaining + ' second';
         
         // Start the timer
         clearInterval(timerInterval); // Clear any previous timer
         timerInterval = setInterval(function () {
             timeRemaining--;
-            countdownElement.textContent = timeRemaining + ' seconds';
+            countdownElement.textContent = timeRemaining + ' second';
             
             if (timeRemaining <= 0) {
                 clearInterval(timerInterval);
