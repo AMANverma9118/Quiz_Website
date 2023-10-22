@@ -65,6 +65,43 @@ function exit(){
 //Quiz question
 
 const quizdata = [
+
+    {
+        question: "What does HTML stand for?",
+        options: [
+            "Hyperlink and Text Markup Language",
+            "Hyper Text Markup Language",
+            "Hyper Text Marking Language",
+            "Hyper Text Machine Language",
+        ],
+        correct: 1,
+        timeLimit: 10,
+    },
+    {
+        question: "Which of the following tag is used to embed css in html page?",
+        options: [
+            "<css>",
+            " <!DOCTYPE html>",
+            "<script>",
+            "<style>",
+            
+        ],
+        correct: 3,
+        timeLimit: 10,
+    },
+    
+{
+    question: "Which of the below is the abbreviation of CSS ?",
+    options: [
+        "Cascading Style Sheets",
+        "Color and Style Sheets",
+        "Coded Style Sheet",
+        "Cascade Sheet Style",
+    ],
+    correct: 0,
+    timeLimit: 10,
+},
+
     {
         question: "Which magical creature is known for guarding banks?",
         options: [
