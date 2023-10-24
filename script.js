@@ -46,9 +46,9 @@ function text() {
 
 }
 function exit() {
-    const submit = document.querySelector('.btn1');
-    const instruction = document.querySelector('.instruction');
-    const exit = document.querySelector('.info-btn_exit-btn');
+    // const submit = document.querySelector('.btn1');
+    // const instruction = document.querySelector('.instruction');
+    // const exit = document.querySelector('.info-btn_exit-btn');
     window.location.href = "index.html"
 
 }
