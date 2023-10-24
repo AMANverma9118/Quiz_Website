@@ -16,14 +16,11 @@ body{
     flex-wrap: wrap;
     flex-direction: column;
     height: 100vh;
-    background-image: url('/simple-blue-background-free-vector.jpg');
+    background-image: url('/Quiz_Website/painting-mountain-lake-with-mountain-background_188544-9126.avif');
     background-size: cover;
     background-repeat: no-repeat;
-    
-    /* background-position: center; */
     color: white;
     font-weight: bolder;
-    /*  */
     align-items: center;
     justify-content: center;
     align-self: center;
@@ -46,19 +43,23 @@ button{
     font-weight: bolds;
     font-size: 1rem;
     color: white;
-    background-color: skyblue;
+    background-color: rgb(54, 56, 56);
     cursor: pointer;
     border: 2px solid wheat;
 }
 button:hover{
-    background-color: rgb(8, 69, 100);
+    background-color: rgb(89, 94, 96);
     transform: translateY(5px);
-    box-shadow: 0px 2px 3px 6px skyblue;
+    box-shadow: 0px 2px 3px 6px rgb(120, 126, 129);
 
 }
-@media (max-width:800px) and (min-width:300px){
+@media (max-width:1200px) and (min-width:320px){
     .name{
         font-size: 4rem;
+    }
+    .container{
+        height: 102vh;
+        width: 102vw;
     }
     button{
         width: 30vw;
@@ -71,35 +72,58 @@ button:hover{
         font-size: 4rem;
     }
     .container{
-        height: 114.3vh;
-        width: 114.3vw;
+        height: 116vh;
+        width: 116vw;
     }
     button{
         width: 30vw;
-        height: 6vh;
+        height: 6.2vh;
     }
 }
+.reload-button{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 26%;
+   
+}
 
+.container2{
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url('/Quiz_Website/mountain-lake-koenigssee-magical-beauty-northern-nature_653449-14841.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    color: rgb(1, 13, 12);
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    
+    width: 100vw;
+}
 .timer{
     position: absolute;
     top: 1%;
     left: 40%;
-    z-index: 3;
     font-size: 2rem;
     color: rgb(130, 12, 12);
 }
 #quiz-section{
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
     flex-direction: column;
+    text-align: center;
+    
     justify-content: center;
     width: 80vw;
     height: 80vh;
-    box-shadow: 10px 10px 5px 15px rgb(201, 201, 255);
+    box-shadow: 10px 10px 5px 15px rgb(121, 121, 147);
     transform: translateY(-5px);
     backdrop-filter: blur(8px);
-    z-index: 1;
+   
     
 }
 h2{
@@ -117,6 +141,7 @@ h2{
 li{
     display: flex;
     justify-content: center;
+    flex-direction: row;
     text-align: center;
     justify-content: center;
     border: 2px solid rgb(180, 167, 167);
@@ -127,7 +152,7 @@ li{
     width: 38rem;
     font-size: 2rem;
     margin: 0.5rem;
-    background-image: linear-gradient(rgb(22, 129, 95), rgb(39, 177, 193) , rgb(24, 113, 112));
+    background-image: linear-gradient(rgb(134, 230, 203), rgb(110, 194, 236) , rgb(18, 93, 83));
 }
 ul{
     display: flex;
@@ -140,15 +165,6 @@ ul{
     margin: 1rem;
 }
 
-.reload-button{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin-left: 35rem;
-}
-
 .progress {
     position: relative;
     width: 100%;
@@ -159,3 +175,33 @@ ul{
     margin-bottom: 10px;
     border: 3px solid #640606;
   }
+
+  
+  @media(max-width:800px) 
+  {
+    #quiz-section{
+        
+        height: auto;
+        width: 80vw;
+    }
+
+   li{
+    flex-direction: column;
+    width: 50vw;
+    font-size: 1rem;
+   }
+h2{
+    font-size: 1rem;
+}
+   .timer{
+    font-size: 1rem;
+    top: 0%;
+    left: 30%;
+   }
+
+   .reload-button{
+    margin-left: 20%;
+   }
+  }
+
+  

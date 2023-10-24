@@ -6,56 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz_Website</title>
     <link rel="stylesheet" href="style2.css">
+    
 </head>
 
 <body>
-<form onsubmit="text()">
+    
+    
     <div class="information">
+        
         <div class="regi">
             Register yourself here!
         </div>
         <div class="text">
-            <input type="text" name="text" id="Firstname" placeholder="FIRST NAME">
+            <input type="text" name="text" id="Firstname" placeholder="FIRST NAME" >
             <input type="text" name="text" id="Lastname" placeholder="LAST NAME">
         </div>
 
         <div class="text">
-            <input type="number" name="number" id="number" placeholder="PHONE NUMBER">
+            <input type="number" name="number" id="number" placeholder="PHONE NUMBER" value="onchange">
         </div>
         <div class="text">
-            <input type="email" name="email" id="email" placeholder="EMAIL">
+            <input required type="email" name="email" id="email" placeholder="EMAIL" >
         </div>
         <div class="text">
-            <input type="text" name="text" id="State" placeholder="YOUR STATE">
+            <input type="text" name="text" id="State" placeholder="YOUR STATE" >
         </div>
         <div class="text">
-            <button type="button" value="reset now" class="btn1">RESET</button>
-            <button type="submit" class="btn1">SUBMIT</button>
+            <button type="button" value="reset now" class="btn1" >RESET</button>
+            <button type="submit" class="btn1" onclick="text()">SUBMIT</button>
         </div>
-
-    </div>
-</form>
     
-
-    <div class="instruction">
-        <h2>Quiz Guide</h2>
-        <div class="infoo">
-            <span class="info">1. This quiz game contains 6 questions.</span>
-            <span class="info">2. If the answer is correct then score will +5.</span>
-            <span class="info">3. If the answer is wrong then score will be -1.</span>
-            <span class="info">4. Each question has 10 seconds.</span>
-            <span class="info">5. All the best.</span>
-        </div>
-       
-        
-
-        <div class="btn-group">
-            <button onclick="exit()" class="info-btn_exit-btn">Exit Quiz</button>
-            <a href="#" onclick="cont()" class="info-btn_continue-btn">Continue</a>
-        </div>
     </div>
-    <script src="script.js"></script>
 
+<script src="script.js"></script>
 </body>
 
 

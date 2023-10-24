@@ -21,14 +21,15 @@ function text() {
     var phone_number = localStorage.setItem("Phone_number", number);
     var email_user = localStorage.setItem("Email", email);
     var state_user = localStorage.setItem("State", state);
-
+    const email_check=/^[^@\s]+@[^@\s]+\.[^@\s]+$/
+    const text_check=/^[A-Za-z]+[A-Za-z ]+$/
     var a, b, c, d;
     a = first_name + last_name;
     b = number;
     c = email;
     d = state;
-    if (a.length == 0 || b.length == 0 || c == 0 || d == 0) {
-        alert("Fill all the information");
+    if (a.length == 0 || b.length == 0 || c == 0 || d == 0||!email_check.test(c)||!text_check.test(a)) {
+        alert("Fill all the information correctly!");
         count++;
     }
 
@@ -38,20 +39,17 @@ function text() {
     if (a.length != 0 && b.length != 0 && c != 0 && d != 0){
         alert("Your information successfully submited");
     }
-    
-    
-    const submit = document.querySelector('.btn1');
-    const instruction = document.querySelector('.instruction');
-    instruction.classList.add('active');
 
+    window.location.href = "instruction.html";
 }
 function exit() {
-    // const submit = document.querySelector('.btn1');
-    // const instruction = document.querySelector('.instruction');
-    // const exit = document.querySelector('.info-btn_exit-btn');
-    window.location.href = "index.html"
+   
+    window.location.href = "index.html";
 
 }
+// function text{
+    
+// }
 
 function cont() {
     window.location.href = "Quiz_question.html";
@@ -279,8 +277,10 @@ if(currentQuiz+1 < quizdata.length){
         <div class="result">
         <h2>🎉 Your score: ${score}/${quizdata.length*5} correct Answers </h2>
         <p>Congratulations on completing the quiz! ${localStorage.getItem('Name')} 🏆 </p>
+        <div class="reload-button">
         <button class="reload-button" onclick="location.reload()">Play again 🔁</button>
         <button class="reload-button" onclick="exit();">Exit game</button>
+        </div>
         </div>`
         ;
                 }
