@@ -1,22 +1,23 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0rem;
     margin: 0rem;
 }
 
-body{
+body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.name{
+
+.name {
     font-size: 8rem;
 }
 
-.container{
+.container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     height: 100vh;
-    background-image: url('/Quiz_Website/painting-mountain-lake-with-mountain-background_188544-9126.avif');
+    background-image: url('painting-mountain-lake-with-mountain-background_188544-9126.avif');
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
@@ -24,13 +25,15 @@ body{
     align-items: center;
     justify-content: center;
     align-self: center;
-    
+
     width: 100vw;
 }
-.btn a{
+
+.btn a {
     text-decoration: none;
 }
-button{
+
+button {
     display: flex;
     flex-wrap: wrap;
     height: 5vh;
@@ -47,52 +50,59 @@ button{
     cursor: pointer;
     border: 2px solid wheat;
 }
-button:hover{
+
+button:hover {
     background-color: rgb(89, 94, 96);
     transform: translateY(5px);
     box-shadow: 0px 2px 3px 6px rgb(120, 126, 129);
 
 }
-@media (max-width:1200px) and (min-width:320px){
-    .name{
+
+@media (max-width:1200px) and (min-width:320px) {
+    .name {
         font-size: 4rem;
     }
-    .container{
+
+    .container {
         height: 102vh;
         width: 102vw;
     }
-    button{
+
+    button {
         width: 30vw;
         height: 6vh;
     }
 }
 
-@media (max-width:295px){
-    .name{
+@media (max-width:295px) {
+    .name {
         font-size: 4rem;
     }
-    .container{
+
+    .container {
         height: 116vh;
         width: 116vw;
     }
-    button{
+
+    button {
         width: 30vw;
         height: 6.2vh;
     }
 }
-.reload-button{
+
+.reload-button {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     margin-left: 26%;
-   
+
 }
 
-.container2{
+.container2 {
     display: flex;
     flex-wrap: wrap;
-    background-image: url('/Quiz_Website/mountain-lake-koenigssee-magical-beauty-northern-nature_653449-14841.avif');
+    background-image: url('mountain-lake-koenigssee-magical-beauty-northern-nature_653449-14841.avif');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -101,44 +111,50 @@ button:hover{
     align-items: center;
     justify-content: center;
     align-self: center;
-    
+
     width: 100vw;
 }
-.timer{
+
+.timer {
     position: absolute;
     top: 1%;
     left: 40%;
     font-size: 2rem;
     color: rgb(130, 12, 12);
 }
-#quiz-section{
+
+#quiz-section {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
-    
+
     justify-content: center;
     width: 80vw;
     height: 80vh;
     box-shadow: 10px 10px 5px 15px rgb(121, 121, 147);
     transform: translateY(-5px);
     backdrop-filter: blur(8px);
-   
-    
+
+
 }
-h2{
-   font-size: 2rem;
+
+h2 {
+    font-size: 2rem;
 }
-.btn2{
+
+.btn2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-.option{
+
+.option {
     margin: 0.5rem;
 }
-li{
+
+li {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -152,16 +168,18 @@ li{
     width: 38rem;
     font-size: 2rem;
     margin: 0.5rem;
-    background-image: linear-gradient(rgb(134, 230, 203), rgb(110, 194, 236) , rgb(18, 93, 83));
+    background-image: linear-gradient(rgb(134, 230, 203), rgb(110, 194, 236), rgb(18, 93, 83));
 }
-ul{
+
+ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
 
 }
-.question{
+
+.question {
     margin: 1rem;
 }
 
@@ -174,34 +192,33 @@ ul{
     overflow: hidden;
     margin-bottom: 10px;
     border: 3px solid #640606;
-  }
+}
 
-  
-  @media(max-width:800px) 
-  {
-    #quiz-section{
-        
+
+@media(max-width:800px) {
+    #quiz-section {
+
         height: auto;
         width: 80vw;
     }
 
-   li{
-    flex-direction: column;
-    width: 50vw;
-    font-size: 1rem;
-   }
-h2{
-    font-size: 1rem;
+    li {
+        flex-direction: column;
+        width: 50vw;
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .timer {
+        font-size: 1rem;
+        top: 0%;
+        left: 30%;
+    }
+
+    .reload-button {
+        margin-left: 20%;
+    }
 }
-   .timer{
-    font-size: 1rem;
-    top: 0%;
-    left: 30%;
-   }
-
-   .reload-button{
-    margin-left: 20%;
-   }
-  }
-
-  

@@ -1,7 +1,7 @@
 function MyFunction() {
     window.location.href = "firstpage.html";
 }
-const space=" ";
+const space = " ";
 function text() {
     //Taking data
     var first_name = document.getElementById("Firstname").value;
@@ -12,23 +12,23 @@ function text() {
     const count = 0;
     //Storing in localstorage
 
-    var name = localStorage.setItem("Name", first_name+ space + last_name);
+    var name = localStorage.setItem("Name", first_name + space + last_name);
     var phone_number = localStorage.setItem("Phone_number", number);
     var email_user = localStorage.setItem("Email", email);
     var state_user = localStorage.setItem("State", state);
 
-    var name = localStorage.setItem("Name", first_name +space+ last_name);
+    var name = localStorage.setItem("Name", first_name + space + last_name);
     var phone_number = localStorage.setItem("Phone_number", number);
     var email_user = localStorage.setItem("Email", email);
     var state_user = localStorage.setItem("State", state);
-    const email_check=/^[^@\s]+@[^@\s]+\.[^@\s]+$/
-    const text_check=/^[A-Za-z]+[A-Za-z ]+$/
+    const email_check = /^[^@\s]+@[^@\s]+\.[^@\s]+$/
+    const text_check = /^[A-Za-z]+[A-Za-z ]+$/
     var a, b, c, d;
     a = first_name + last_name;
     b = number;
     c = email;
     d = state;
-    if (a.length == 0 || b.length == 0 || c == 0 || d == 0||!email_check.test(c)||!text_check.test(a)) {
+    if (a.length == 0 || b.length == 0 || c == 0 || d == 0 || !email_check.test(c) || !text_check.test(a)) {
         alert("Fill all the information correctly!");
         count++;
     }
@@ -36,26 +36,26 @@ function text() {
     if (count > 0) {
         text();
     }
-    if (a.length != 0 && b.length != 0 && c != 0 && d != 0){
+    if (a.length != 0 && b.length != 0 && c != 0 && d != 0) {
         alert("Your information successfully submited");
     }
 
     window.location.href = "instruction.html";
 }
 function exit() {
-   
+
     window.location.href = "index.html";
 
 }
 // function text{
-    
+
 // }
 
 function cont() {
     window.location.href = "Quiz_question.html";
 }
 
-function exit(){
+function exit() {
     window.location.href = "index.html";
 }
 
@@ -82,23 +82,23 @@ const quizdata = [
             " <!DOCTYPE html>",
             "<script>",
             "<style>",
-            
+
         ],
         correct: 3,
         timeLimit: 10,
     },
-    
-{
-    question: "Which of the below is the abbreviation of CSS ?",
-    options: [
-        "Cascading Style Sheets",
-        "Color and Style Sheets",
-        "Coded Style Sheet",
-        "Cascade Sheet Style",
-    ],
-    correct: 0,
-    timeLimit: 10,
-},
+
+    {
+        question: "Which of the below is the abbreviation of CSS ?",
+        options: [
+            "Cascading Style Sheets",
+            "Color and Style Sheets",
+            "Coded Style Sheet",
+            "Cascade Sheet Style",
+        ],
+        correct: 0,
+        timeLimit: 10,
+    },
 
     {
         question: "Which magical creature is known for guarding banks?",
@@ -235,11 +235,11 @@ const timer = document.querySelector("timer1");
 
 const loadQuiz = () => {
     const { question, options } = quizdata[currentQuiz];
-    questionelm.innerText = `${currentQuiz+1}. ${question}`;
+    questionelm.innerText = `${currentQuiz + 1}. ${question}`;
 
     options.forEach((curOption, index) => (window[`option_${index + 1}`].innerText = curOption)
     );
-//   displayQuestion();  
+    //   displayQuestion();  
 };
 
 loadQuiz();
@@ -247,23 +247,23 @@ loadQuiz();
 let currentQuestionIndex = 0; // Index of the current question
 let timerInterval;
 
-if(currentQuiz+1 < quizdata.length){
+if (currentQuiz + 1 < quizdata.length) {
     function displayQuestion(index) {
         const questionElement = document.getElementById('question');
         const optionElements = document.querySelectorAll('.option');
         const countdownElement = document.getElementById('countdown');
-        
-        
+
+
         // Set the initial time limit
         let timeRemaining = quizdata[index].timeLimit;
         countdownElement.textContent = timeRemaining + ' second';
-        
+
         // Start the timer
         clearInterval(timerInterval); // Clear any previous timer
         timerInterval = setInterval(function () {
             timeRemaining--;
             countdownElement.textContent = timeRemaining + ' second';
-            
+
             if (timeRemaining <= 0) {
                 clearInterval(timerInterval);
                 // Time's up! You can perform some action here.
@@ -272,28 +272,28 @@ if(currentQuiz+1 < quizdata.length){
                     currentQuiz++;
                     loadQuiz();
                 }
-                else{
+                else {
                     quiz.innerHTML = `
         <div class="result">
-        <h2>🎉 Your score: ${score}/${quizdata.length*5} correct Answers </h2>
+        <h2>🎉 Your score: ${score}/${quizdata.length * 5} correct Answers </h2>
         <p>Congratulations on completing the quiz! ${localStorage.getItem('Name')} 🏆 </p>
         <div class="reload-button">
         <button class="reload-button" onclick="location.reload()">Play again 🔁</button>
         <button class="reload-button" onclick="exit();">Exit game</button>
         </div>
         </div>`
-        ;
+                        ;
                 }
                 displayQuestion(currentQuiz);
-                
+
             }
         }, 1000);
     }
-    
+
     // Initialize the first question and timer
     displayQuestion(currentQuiz);
-    
-    
+
+
 }
 
 
@@ -310,68 +310,67 @@ const getselectedoption = () => {
 };
 
 // deselectedAnswer
-const deselectedAnswer = () =>{
+const deselectedAnswer = () => {
     answerElm.forEach((curOption) => curOption.checked = false);
 }
 
 submit.addEventListener("click", () => {
     const selectedOptionIndex = getselectedoption();
 
-    if (selectedOptionIndex.length==0)
-    {
+    if (selectedOptionIndex.length == 0) {
         deselectedAnswer();
         loadQuiz();
-        
+
     }
 
-    if(selectedOptionIndex == quizdata[currentQuiz].correct){
-        score = score+5;
+    if (selectedOptionIndex == quizdata[currentQuiz].correct) {
+        score = score + 5;
     }
-    else if(selectedOptionIndex != quizdata[currentQuiz].correct){
-        score = score-1;
+    else if (selectedOptionIndex != quizdata[currentQuiz].correct) {
+        score = score - 1;
     }
-       
-        currentQuiz++;
-        if(currentQuiz < quizdata.length){
-            displayQuestion(currentQuestionIndex);
-        }
-        
+
+    currentQuiz++;
+    if (currentQuiz < quizdata.length) {
+        displayQuestion(currentQuestionIndex);
+    }
+
 
     if (currentQuiz < quizdata.length) {
         deselectedAnswer();
         loadQuiz();
     }
-    else{
+    else {
         quiz.innerHTML = `
         <div class="result">
-        <h2>🎉 Your score: ${score}/${quizdata.length*5} correct Answers </h2>
+        <h2>🎉 Your score: ${score}/${quizdata.length * 5} correct Answers </h2>
         <p>Congratulations on completing the quiz! ${localStorage.getItem('Name')} 🏆 </p>
         <button class="reload-button" onclick="location.reload()">Play again 🔁</button>
         <button class="reload-button" onclick="exit();">Exit game</button>
         </div>`
-        ;
+            ;
     }
 
 });
 
 skip.addEventListener("click", () => {
-    if(currentQuiz < quizdata.length){
+    if (currentQuiz < quizdata.length) {
         displayQuestion(currentQuestionIndex);
     }
-    
+
     currentQuiz++;
-    if(currentQuiz<quizdata.length){
+    if (currentQuiz < quizdata.length) {
         deselectedAnswer();
         loadQuiz();
     }
-    else{
+    else {
         quiz.innerHTML = `
         <div class="result">
-        <h2>🎉 Your score: ${score}/${quizdata.length*5} correct Answers </h2>
+        <h2>🎉 Your score: ${score}/${quizdata.length * 5} correct Answers </h2>
         <p>Congratulations on completing the quiz! ${localStorage.getItem('Name')} 🏆 </p>
         <button class="reload-button" onclick="location.reload()">Play again 🔁</button>
         <button class="reload-button" onclick="exit();">Exit game</button>
         </div>`
-        ;
+            ;
     }
 });
