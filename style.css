@@ -17,7 +17,7 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     height: 100vh;
-    background-image: url('painting-mountain-lake-with-mountain-background_188544-9126.avif');
+    background-image: url('/Quiz_Website/Winter-Wallpaper.webp');
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
@@ -95,14 +95,14 @@ button:hover {
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    margin-left: 26%;
+    margin-left: 45%;
 
 }
 
 .container2 {
     display: flex;
     flex-wrap: wrap;
-    background-image: url('mountain-lake-koenigssee-magical-beauty-northern-nature_653449-14841.avif');
+    background-image: url('/maxresdefault.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -168,7 +168,7 @@ li {
     width: 38rem;
     font-size: 2rem;
     margin: 0.5rem;
-    background-image: linear-gradient(rgb(134, 230, 203), rgb(110, 194, 236), rgb(18, 93, 83));
+    background-image: linear-gradient(rgb(13, 40, 32), rgb(127, 130, 132), rgb(55, 58, 57));
 }
 
 ul {
@@ -203,7 +203,7 @@ ul {
     }
 
     li {
-        flex-direction: column;
+        flex-direction: row;
         width: 50vw;
         font-size: 1rem;
     }
@@ -219,6 +219,6 @@ ul {
     }
 
     .reload-button {
-        margin-left: 20%;
+        margin-left: 28%;
     }
 }

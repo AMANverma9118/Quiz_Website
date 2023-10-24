@@ -270,6 +270,7 @@ if (currentQuiz + 1 < quizdata.length) {
                 // For example, move to the next question.
                 if (currentQuiz < quizdata.length - 1) {
                     currentQuiz++;
+                    deselectedAnswer();
                     loadQuiz();
                 }
                 else {
@@ -277,10 +278,8 @@ if (currentQuiz + 1 < quizdata.length) {
         <div class="result">
         <h2>🎉 Your score: ${score}/${quizdata.length * 5} correct Answers </h2>
         <p>Congratulations on completing the quiz! ${localStorage.getItem('Name')} 🏆 </p>
-        <div class="reload-button">
         <button class="reload-button" onclick="location.reload()">Play again 🔁</button>
         <button class="reload-button" onclick="exit();">Exit game</button>
-        </div>
         </div>`
                         ;
                 }
@@ -355,6 +354,7 @@ submit.addEventListener("click", () => {
 
 skip.addEventListener("click", () => {
     if (currentQuiz < quizdata.length) {
+        deselectedAnswer();
         displayQuestion(currentQuestionIndex);
     }
 
