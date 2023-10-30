@@ -202,8 +202,36 @@ ul {
     border: 3px solid #640606;
 }
 
+@media(max-width:1300px) and (min-width:700px)
+{
+    #quiz-section {
 
-@media(max-width:800px) {
+        height: auto;
+        width: 80vw;
+    }
+
+    li {
+        flex-direction: row;
+        width: 50vw;
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .timer {
+        font-size: 1rem;
+        top: 0%;
+        left: 45%;
+    }
+
+    .reload-button {
+        margin-left: 37%;
+    }
+}
+
+@media(max-width:600px) {
     #quiz-section {
 
         height: auto;
