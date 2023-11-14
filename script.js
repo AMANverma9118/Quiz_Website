@@ -10,6 +10,7 @@ function text() {
     var email = document.getElementById("email").value;
     var state = document.getElementById("State").value;
     const count = 0;
+    
     //Storing in localstorage
 
     var name = localStorage.setItem("Name", first_name + space + last_name);
@@ -247,10 +248,10 @@ loadQuiz();
 let currentQuestionIndex = 0; // Index of the current question
 let timerInterval;
 
-if (currentQuiz + 1 < quizdata.length) {
+
     function displayQuestion(index) {
-        const questionElement = document.getElementById('question');
-        const optionElements = document.querySelectorAll('.option');
+        // const questionElement = document.getElementById('question');
+        // const optionElements = document.querySelectorAll('.option');
         const countdownElement = document.getElementById('countdown');
 
 
@@ -293,7 +294,7 @@ if (currentQuiz + 1 < quizdata.length) {
     displayQuestion(currentQuiz);
 
 
-}
+
 
 
 //taking user answer
